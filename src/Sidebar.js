@@ -1,5 +1,4 @@
 import FElogo from './dist/img/FE-t-logo.svg';
-import UserB from './dist/img/user-business.svg';
 import './sidebar.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -45,6 +44,7 @@ function Sidebar() {
                 </li>
             </ul>
         </div>
+        <div className={showToggled ? "active2" : ""} id="overlay"></div>
     </div>
   );
 }
