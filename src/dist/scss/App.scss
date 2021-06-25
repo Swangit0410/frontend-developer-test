@@ -1,0 +1,220 @@
+@import 'base/variables';
+
+*{
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  background: $bgcolor;
+  .main-content {
+    margin-left: 90px;
+    h1{
+      font-family: $font;
+      font-style: normal;
+      font-weight: 700!important;
+      font-size: 28px!important;
+      line-height: 38px!important;
+      display: flex;
+    }
+    button.dl-btn{
+      background: $primarycolor;
+      border-radius: 20px;
+      display: flex;
+      float: right;
+      padding: 5px 10px;
+      font-size: 14px;
+      transition: all ease 0.3s;
+      &:hover {
+        box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+        background: #0a5ec5;
+      }
+    }
+    .banner {
+      background: #FFFFFF;
+      box-shadow: 2px 2px 4px #EEEEEE;
+      border-radius: 12px;
+      height: 336px;  
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 35px;
+      p {
+        max-width: 515px;
+        text-align: left;
+        position: absolute;
+        .b-title {
+          font-family: $font;
+          font-style: normal;
+          font-weight: 700!important;
+          font-size: 28px!important;
+          line-height: 73px!important;
+          color: #000000;
+          text-align: left;
+        }
+        .b-descrp {
+          font-family: $font;
+          font-style: normal;
+          font-weight: 400!important;
+          font-size: 16px!important;
+          line-height: 22px!important;
+          color:#000000;
+        }
+      }
+      .banner-img {
+        object-fit: contain;
+        height: 100%;
+        margin-left: auto;
+        padding-right: 40px;
+      }
+    }
+    .category {
+      background: #FFFFFF;
+      box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      margin-top: 30px;
+      margin-bottom: 200px;
+      text-align: left;
+      padding: 20px 28px;
+      p.c-title {
+        font-family: $font;
+        font-style: normal;
+        font-weight: bold!important;
+        font-size: 16px!important;
+        line-height: 22px!important;
+        letter-spacing: -0.02em;
+        color: #000000;
+      }
+      .card {
+        transition: all 0.3s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+        margin-bottom: 10px;
+        .card-body {
+          .card-title {
+            font-family: $font;
+            font-style: normal;
+            font-weight: 700!important;
+            font-size: 14px!important;
+            line-height: 19px!important;
+            letter-spacing: -0.02em;
+            color: #373737;
+          }
+          .card-text {
+            font-family: $font;
+            font-style: normal;
+            font-weight: 400!important;
+            font-size: 14px!important;
+            line-height: 19px!important;
+            letter-spacing: -0.02em;
+            color: #373737;
+          }
+          button {
+            background: $primarycolor;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            line-height: 156.32%;
+            transition: all ease 0.3s;
+            &:hover {
+              box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+              background: #0a5ec5;
+            }
+          }
+          span.btn-new{
+            padding: 0px 8px;
+            position: relative;
+            height: 16px;
+            float: right;
+            background: $primarycolor;
+            border-radius: 20px;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 156.32%;
+            color:#fff;
+            top:-5px;
+          }
+          .bubble-usr{
+            position: relative;
+            box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+            border-radius: 25px;
+            background: #fff;
+            z-index: 1;
+            padding: 8px;
+            top:-25px;
+          }
+        }
+        &:hover{
+          cursor: pointer;
+          box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+  
+  
+  
+  .App-header {
+    background-color: $bgcolor;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: $textcolor;
+    .App-logo {
+      height: 40vmin;
+      pointer-events: none;
+    }
+    .App-link {
+      color: #61dafb;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .App {
+    .main-content {
+      margin-left: 0;
+      padding-top: 55px;
+    }
+  }
+}
+@media (max-width: $breakpoint-small) {
+  .App {
+    .main-content {
+      .banner {
+        .banner-img {
+          width: 100%;
+        }
+        p {
+          max-width: 460px;
+        }
+      } 
+    }
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .App .main-content .banner {
+    p {
+      max-width: 395px;
+    }
+  }
+}

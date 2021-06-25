@@ -1,0 +1,95 @@
+@import 'base/variables';
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    background: $bgcolor;
+    #sidebar {
+        min-width: 60px;
+        max-width: 60px;
+        margin-left: 20px;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        
+        .sidebar-header {
+            padding: 20px 0px;
+            .FElogo{
+                width: 35px;
+            }
+        }
+        ul.list-unstyled {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 17px;
+            position: absolute;
+            width: 62px;
+            height: 166px;
+            background: #FFF;
+            border-radius: 50px;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.09);
+            left: 0px;
+            top: 90px;
+            li {
+                a {
+                    color: #000000;
+                    padding: 10px;
+                    font-size: 1.1em;
+                    display: block;
+                    transition: all 0.3s;
+                    &:hover{
+                        color: #0B78FF;
+                    }
+                    .iconn {
+                        width: 27px;
+                    }
+                } 
+            }
+        }
+
+        #sidebarCollapse {
+            display: none;
+        }
+    }
+}
+@media (max-width: $breakpoint-tablet) {
+    .wrapper {
+        #sidebar {
+            margin-left: -89px;
+            transition: all 0.3s;
+            height: 100%;
+            #sidebarCollapse {
+                display: block;
+                margin-left: 102px;
+                position: absolute;
+                margin-top: 18px;
+                background: inherit;
+                color: #222;
+                border: none;   
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            ul.list-unstyled {
+                border-radius: 0;
+                box-shadow: none;
+                border-top: 2px solid #e2e0e0;
+            }
+            .sidebar-header{
+                .FElogo {
+                    width: 25px;
+                    margin-top: 14px;
+                }
+            }
+        }
+        #sidebar.active {
+            margin-left: 0;
+            background: #FFF;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.09);
+        }
+    }
+}
